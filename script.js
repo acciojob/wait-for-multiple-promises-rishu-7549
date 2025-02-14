@@ -1,6 +1,6 @@
 
 const output = document.getElementById('output');
-output.innerHTML = '<tr><td colspan="2">Loading...</td></tr>';
+output.innerHTML = '<tr id="loading"><td colspan="2">Loading...</td></tr>';
 
 function createPromise(id) {
   const delay = Math.random() * 2000 + 1000; 
