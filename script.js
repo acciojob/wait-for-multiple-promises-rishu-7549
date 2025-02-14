@@ -1,4 +1,3 @@
-
 const output = document.getElementById('output');
 output.innerHTML = '<tr id="loading"><td colspan="2">Loading...</td></tr>';
 
@@ -17,11 +16,11 @@ const promises = [
   createPromise(3)
 ];
 
-const startTime = Date.now();
+// const startTime = Date.now();
 
 Promise.all(promises).then(results => {
-  const endTime = Date.now();
-  const totalTime = ((endTime - startTime) / 1000);
+  // const endTime = Date.now();
+  // const totalTime = ((endTime - startTime) / 1000);
 
   output.innerHTML = '';
 
@@ -33,7 +32,8 @@ Promise.all(promises).then(results => {
       `;
       output.appendChild(row);
   });
-	
+
+  const totalTime = Math.max(...results.map(result => result.time));
   const totalRow = document.createElement('tr');
     totalRow.innerHTML = `
       <td>Total</td>
